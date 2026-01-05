@@ -1,0 +1,86 @@
+body {
+  font-family: 'Arial';
+  background-color: #f0f4f8;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.type{
+  color: white;
+  font-size: 2rem;
+  border: 1px solid #C4C4C4 ;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px black;
+}
+#text{
+  font-size: 2rem;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+#logo{
+  width: 15rem;
+  height: 15rem;
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+#image{
+  margin-top: 10px;
+  width: 200px;
+  height: 200px;
+}
+#NORMAL{
+  background-color: #A8A77A;
+}
+#FIRE{
+  background-color: #EE8130;
+}
+#WATER{
+  background-color: #6390F0;
+}
+#GRASS{
+  background-color: #7AC74C;
+}
+#ELECTRIC{
+  background-color: #F7D02C;
+}
+#ICE{
+  background-color: #96D9D6;
+}
+#FIGHTING{
+  background-color: #C22E28;
+}
+#POISON{
+  background-color: #A33EA1;
+}
+#GROUND{
+  background-color: #E2BF65;
+}
+#FLYING{
+  background-color: #A98FF3;
+}
+#PSYCHIC{
+  background-color: #F95587;
+}
+#BUG{
+  background-color: #A6B91A;
+}
+#ROCK{
+  background-color: #B6A136;
+}
+#GHOST{
+  background-color: #735797;
+}
+#DRAGON{
+  background-color: #6F35FC;
+}
+#DARK{
+  background-color: #705746;
+}
+#STEEL{
+  background-color: #B7B7CE;
+}
+#FAIRY{
+  background-color: #D685AD;
+}
