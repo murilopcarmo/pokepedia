@@ -1,5 +1,5 @@
 body {
-  font-family: 'Arial';
+  font-family: "Arial";
   background-color: #f0f4f8;
   margin: 0;
   display: flex;
@@ -18,7 +18,7 @@ body {
   flex: 1;
   text-align: left;
 }
-#statsTable{
+#statsTable {
   flex: 1;
   width: 100%;
   border-collapse: separate;
@@ -28,80 +28,89 @@ td {
   background: white;
   border: 1px solid black;
 }
-.type{
+.type {
   color: white;
   font-size: 2rem;
-  border: 1px solid #C4C4C4 ;
+  border: 1px solid #c4c4c4;
   border-radius: 4px;
   box-shadow: 1px 1px 2px black;
 }
-#text{
+#text {
   font-size: 2rem;
   margin-top: 0px;
   margin-bottom: 10px;
 }
-#logo{
+#logo {
   width: 15rem;
   height: 15rem;
   margin-left: 20px;
   margin-bottom: 0;
 }
-#image{
+#image {
   margin-top: 10px;
   width: 200px;
   height: 200px;
 }
-#NORMAL{
-  background-color: #A8A77A;
+#audio {
+  background-color: white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  margin-top: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-#FIRE{
-  background-color: #EE8130;
+#NORMAL {
+  background-color: #a8a77a;
 }
-#WATER{
-  background-color: #6390F0;
+#FIRE {
+  background-color: #ee8130;
 }
-#GRASS{
-  background-color: #7AC74C;
+#WATER {
+  background-color: #6390f0;
 }
-#ELECTRIC{
-  background-color: #F7D02C;
+#GRASS {
+  background-color: #7ac74c;
 }
-#ICE{
-  background-color: #96D9D6;
+#ELECTRIC {
+  background-color: #f7d02c;
 }
-#FIGHTING{
-  background-color: #C22E28;
+#ICE {
+  background-color: #96d9d6;
 }
-#POISON{
-  background-color: #A33EA1;
+#FIGHTING {
+  background-color: #c22e28;
 }
-#GROUND{
-  background-color: #E2BF65;
+#POISON {
+  background-color: #a33ea1;
 }
-#FLYING{
-  background-color: #A98FF3;
+#GROUND {
+  background-color: #e2bf65;
 }
-#PSYCHIC{
-  background-color: #F95587;
+#FLYING {
+  background-color: #a98ff3;
 }
-#BUG{
-  background-color: #A6B91A;
+#PSYCHIC {
+  background-color: #f95587;
 }
-#ROCK{
-  background-color: #B6A136;
+#BUG {
+  background-color: #a6b91a;
 }
-#GHOST{
+#ROCK {
+  background-color: #b6a136;
+}
+#GHOST {
   background-color: #735797;
 }
-#DRAGON{
-  background-color: #6F35FC;
+#DRAGON {
+  background-color: #6f35fc;
 }
-#DARK{
+#DARK {
   background-color: #705746;
 }
-#STEEL{
-  background-color: #B7B7CE;
+#STEEL {
+  background-color: #b7b7ce;
 }
-#FAIRY{
-  background-color: #D685AD;
+#FAIRY {
+  background-color: #d685ad;
 }
