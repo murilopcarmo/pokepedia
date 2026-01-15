@@ -1,8 +1,8 @@
-export const usePokemonCry = (src) => {
-  const playCry = (src) => {
+export const usePokemonCry = ({src}) => {
+  const play = () => {
     const pokemonCry = new Audio(src);
     pokemonCry.currentTime = 0;
     pokemonCry.play();
   };
-  return () => playCry(src);
+  return {play};
 };

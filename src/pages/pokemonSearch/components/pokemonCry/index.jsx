@@ -1,9 +1,12 @@
 import { usePokemonCry } from "./hooks";
-import { CryButton } from "./styles";
+import { Box, CryButton } from "./styles";
 
 export const PokemonCry = ({ src }) => {
-    const playCry = usePokemonCry(src);
-    return (
-        <CryButton onClick={playCry} >▶</CryButton>
-    );
-}
+  const {play} = usePokemonCry({src});
+  return (
+    <Box>
+      <CryButton onClick={play}>▶</CryButton>
+      <span>Cry</span>
+    </Box>
+  );
+};

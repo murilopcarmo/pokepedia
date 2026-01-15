@@ -9,3 +9,8 @@ export const CryButton = styled.button`
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 `;
+export const Box = styled.div`
+  display: flex;
+  gap: 5px;
+  align-items: center;
+`;

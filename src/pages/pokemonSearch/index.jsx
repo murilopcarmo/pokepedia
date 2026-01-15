@@ -3,6 +3,7 @@ import { PokemonType } from "./components/pokemonType";
 import { PokemonSprite } from "./components/pokemonSprite";
 import { PokemonStats } from "./components/pokemonStats";
 import { PokemonCry } from "./components/pokemonCry";
+import { Container } from "./styles";
 
 class PokemonSearch extends React.Component {
   constructor(props) {
@@ -92,16 +93,18 @@ class PokemonSearch extends React.Component {
             )}
             <br />
             {/*Tipos*/}
+            <Container>
             {this.state.type &&
               this.state.type.map((item, index) => (
                 <PokemonType key={index} types={item.type.name} />
               ))}
+              </Container>
             {/* Som do Pokemon */}
             <br />
             {this.state.cry && (
               <PokemonCry src={this.state.cry} />
             )}
-            <span>Cry</span>
+            
           </div>
           {/*Tabela de stats*/}
           {this.state.stats && this.state.stats.length > 1 && (
