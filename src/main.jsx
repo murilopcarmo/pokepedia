@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import PokemonSearch from "./pages/pokemonSearch/index.jsx";
+import { PokeSearch } from "./pages/pokemonSearch";
 class App extends React.Component {
   render() {
     return (
@@ -14,10 +14,10 @@ class App extends React.Component {
           />
         </header>
         <main>
-          <PokemonSearch />
+          <PokeSearch />
         </main>
         {/*<Footer />*/}
-        <footer>© 2026 Pokémon Search API</footer>
+        <footer>© 2026 PokéPedia</footer>
       </div>
     );
   }
