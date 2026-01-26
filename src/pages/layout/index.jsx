@@ -5,6 +5,6 @@ export const Layout = ({children}) => {
   return <div>
     <header><SearchAppBar /></header>
     <main>{children}</main>
-    <footer>Footer content</footer>
+    <footer>© 2026 PokéPedia</footer>
   </div>;
 }  

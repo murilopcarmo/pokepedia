@@ -3,11 +3,14 @@ import { PokemonType } from "./components/pokemonType";
 import { PokemonSprite } from "./components/pokemonSprite";
 import { PokemonStats } from "./components/pokemonStats";
 import { PokemonCry } from "./components/pokemonCry";
+import { PokemonCard } from "./components/pokemonCard";
 import { Container, SearchButton } from "./styles";
 import { Typography } from "@mui/material";
+import TextField from "@mui/material/TextField";
 
 export const PokeSearch = () => {
   const [pokemon, setPokemon] = useState({
+    id: "",
     name: "",
     image: "",
     type: [],
@@ -32,7 +35,8 @@ export const PokeSearch = () => {
       }
       const data = await response.json();
       setPokemon({
-        name: data.name.toUpperCase(),
+        id: data.id,
+        name: data.name.charAt(0).toUpperCase() + data.name.slice(1).toLowerCase(),
         image: data.sprites.front_default,
         type: data.types,
         stats: data.stats,
@@ -42,6 +46,7 @@ export const PokeSearch = () => {
       // eslint-disable-next-line no-unused-vars
     } catch (e) {
       setPokemon({
+        id: "",
         name: "",
         image: "",
         type: "",
@@ -58,22 +63,26 @@ export const PokeSearch = () => {
   return (
     <div id="pokemon">
       <div id="text">Qual Pokémon busca?</div>
-      <input
-        id="search"
-        type="text"
-        placeholder="Ex: Squirtle"
+      <TextField
+        id="searchPokemon"
+        size="small"
+        variant="outlined"
         value={input}
         onChange={handleChange}
         required
-      ></input>
+      />
       <div id="bottom-box">
-        <SearchButton variant="contained" color="secondary" onClick={pokemonSearch}><Typography variant="buttons">
-          Buscar
-        </Typography>
+        <SearchButton
+          variant="contained"
+          color="secondary"
+          onClick={pokemonSearch}
+        >
+          <Typography variant="buttons">Buscar</Typography>
         </SearchButton>
       </div>
       <br />
       <div id="output">
+        <PokemonCard name={pokemon.name} sprite={pokemon.image} id={pokemon.id} />
         {/*Container de dados*/}
         <div className="pokemon-info">
           {/*nome*/}
@@ -99,6 +108,7 @@ export const PokeSearch = () => {
         {pokemon.stats && pokemon.stats.length > 1 && (
           <PokemonStats stats={pokemon.stats} />
         )}
+        
         <span>{error}</span>
       </div>
     </div>

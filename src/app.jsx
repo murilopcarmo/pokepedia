@@ -17,18 +17,5 @@ const AppRouter = () => {
 export const App = () => {
   return (
     <ThemeProvider theme={theme}><AppRouter /></ThemeProvider>
-    /*<div id="app-container">
-      <div>
-        <img
-          id="logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
-          alt="pokemon-logo"
-        />
-      </div>
-      <main>
-        <PokeSearch />
-      </main>
-    </div>*/
-
-  );
+     );
 };
