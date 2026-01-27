@@ -1,12 +1,15 @@
+import { Typography } from "@mui/material";
 import { usePokemonCry } from "./hooks";
-import { Box, CryButton } from "./styles";
+import { Box } from "./styles";
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import IconButton from "@mui/material/IconButton";
 
 export const PokemonCry = ({ src }) => {
   const {play} = usePokemonCry({src});
   return (
     <Box>
-      <CryButton onClick={play}>▶</CryButton>
-      <span>Cry</span>
+      <IconButton size="small" onClick={play}><PlayCircleIcon /></IconButton>
+      <Typography>Cry</Typography>
     </Box>
   );
 };

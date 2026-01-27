@@ -13,6 +13,9 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LayoutRouteImport } from './routes/_layout'
 
+const LayoutPokemonSearchIndexLazyRouteImport = createFileRoute(
+  '/_layout/pokemonSearch/',
+)()
 const LayoutAboutIndexLazyRouteImport = createFileRoute('/_layout/about/')()
 const LayoutHomeIndexLazyRouteImport = createFileRoute('/_layout/_home/')()
 
@@ -20,6 +23,14 @@ const LayoutRoute = LayoutRouteImport.update({
   id: '/_layout',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LayoutPokemonSearchIndexLazyRoute =
+  LayoutPokemonSearchIndexLazyRouteImport.update({
+    id: '/pokemonSearch/',
+    path: '/pokemonSearch/',
+    getParentRoute: () => LayoutRoute,
+  } as any).lazy(() =>
+    import('./routes/_layout/pokemonSearch/index.lazy').then((d) => d.Route),
+  )
 const LayoutAboutIndexLazyRoute = LayoutAboutIndexLazyRouteImport.update({
   id: '/about/',
   path: '/about/',
@@ -38,23 +49,31 @@ const LayoutHomeIndexLazyRoute = LayoutHomeIndexLazyRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof LayoutHomeIndexLazyRoute
   '/about/': typeof LayoutAboutIndexLazyRoute
+  '/pokemonSearch/': typeof LayoutPokemonSearchIndexLazyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof LayoutHomeIndexLazyRoute
   '/about': typeof LayoutAboutIndexLazyRoute
+  '/pokemonSearch': typeof LayoutPokemonSearchIndexLazyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_layout': typeof LayoutRouteWithChildren
   '/_layout/_home/': typeof LayoutHomeIndexLazyRoute
   '/_layout/about/': typeof LayoutAboutIndexLazyRoute
+  '/_layout/pokemonSearch/': typeof LayoutPokemonSearchIndexLazyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about/'
+  fullPaths: '/' | '/about/' | '/pokemonSearch/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about'
-  id: '__root__' | '/_layout' | '/_layout/_home/' | '/_layout/about/'
+  to: '/' | '/about' | '/pokemonSearch'
+  id:
+    | '__root__'
+    | '/_layout'
+    | '/_layout/_home/'
+    | '/_layout/about/'
+    | '/_layout/pokemonSearch/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -69,6 +88,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof LayoutRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/_layout/pokemonSearch/': {
+      id: '/_layout/pokemonSearch/'
+      path: '/pokemonSearch'
+      fullPath: '/pokemonSearch/'
+      preLoaderRoute: typeof LayoutPokemonSearchIndexLazyRouteImport
+      parentRoute: typeof LayoutRoute
     }
     '/_layout/about/': {
       id: '/_layout/about/'
@@ -90,11 +116,13 @@ declare module '@tanstack/react-router' {
 interface LayoutRouteChildren {
   LayoutHomeIndexLazyRoute: typeof LayoutHomeIndexLazyRoute
   LayoutAboutIndexLazyRoute: typeof LayoutAboutIndexLazyRoute
+  LayoutPokemonSearchIndexLazyRoute: typeof LayoutPokemonSearchIndexLazyRoute
 }
 
 const LayoutRouteChildren: LayoutRouteChildren = {
   LayoutHomeIndexLazyRoute: LayoutHomeIndexLazyRoute,
   LayoutAboutIndexLazyRoute: LayoutAboutIndexLazyRoute,
+  LayoutPokemonSearchIndexLazyRoute: LayoutPokemonSearchIndexLazyRoute,
 }
 
 const LayoutRouteWithChildren =

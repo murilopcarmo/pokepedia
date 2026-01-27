@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material'
 
-const pokedexTheme = {
+export const pokedexTheme = {
   primary: {
     50: '#FEF2F1',
     100: '#FEE2E1',
@@ -68,7 +68,21 @@ export const theme = createTheme({
         buttons: {
             textTransform: 'none',
             fontWeight: 'bold',
-        }
+        },
+        id: {
+          color: pokedexTheme.gray[500],
+          fontFamily: 'Roboto, sans-serif',
+          fontWeight: 500,
+          fontSize: '0.75rem',
+          lineHeight: 2.66,
+          textTransform: 'uppercase',
+          letterSpacing: '0.1em',
+          padding: 0,
+          margin: 0,
+                },
+        h5: {
+          color: pokedexTheme.gray[900],
+        },
     },
     components: {
         MuiButton: {

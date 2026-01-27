@@ -2,7 +2,6 @@ import { styled, alpha } from '@mui/material/styles';
 import {AppBar as MuiAppBar} from '@mui/material';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
@@ -70,7 +69,7 @@ export default function AppBar() {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Quick search Pokémon…"
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
